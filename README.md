@@ -23,7 +23,6 @@ FROM lslio/nginx-php-fpm
 
 ENV SERVER_ROOT=/var/www/public
 ENV SERVER_NAME=example.com
-ENV SERVER_ALIAS="www.example.com api.example.com"
 
 COPY --from=composer --chown=www-data:www-data /var/www /var/www
 ```
