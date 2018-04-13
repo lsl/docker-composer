@@ -13,16 +13,16 @@ The below is geared towards a Laravel production build but can easily be tailore
 ```
 FROM lslio/composer as composer
 
-COPY ./composer.* /var/www/
-RUN composer-install -d /var/www
+COPY ./composer.* /www/
+RUN composer-install -d /www
 
-COPY . /var/www
-RUN composer-dump-autoload -d /var/www
+COPY . /www
+RUN composer-dump-autoload -d /www
 
 FROM lslio/nginx-php-fpm
 
-ENV SERVER_ROOT=/var/www/public
+ENV SERVER_ROOT=/www/public
 ENV SERVER_NAME=example.com
 
-COPY --from=composer --chown=www-data:www-data /var/www /var/www
+COPY --from=composer --chown=www-data:www-data /www /www
 ```
