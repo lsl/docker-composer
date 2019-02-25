@@ -39,3 +39,4 @@ RUN echo 'composer require \
     --no-interaction \
     --ansi "$@"' > /usr/bin/composer-require && \
     chmod +x /usr/bin/composer-require
+
