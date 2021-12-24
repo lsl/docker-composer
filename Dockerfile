@@ -1,14 +1,5 @@
 FROM composer:latest
 
-RUN composer global require hirak/prestissimo \
-    --prefer-dist \
-    --prefer-stable \
-    --no-progress \
-    --no-scripts \
-    --no-suggest \
-    --no-interaction \
-    --ansi
-
 # Install and Autoloader generation is split
 # Allows install step to occur earlier than your code copy step
 RUN echo 'composer install \
